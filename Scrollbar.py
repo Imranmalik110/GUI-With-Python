@@ -1,0 +1,16 @@
+from tkinter import *
+from tkinter import ttk
+window=Tk()
+window.title("Hello Python")
+window.geometry("700x400")
+window.resizable(False,False)
+window.config(bg='white')
+scroll_y=Scrollbar(window)
+scroll_x=Scrollbar(window)
+scroll_y.pack(side=RIGHT,fill=Y)
+scroll_x.pack(side=BOTTOM,fill=X)
+text=Text(window,width=50,height=15,bd=15,relief='groove',wrap='word',font=('aril',10),xscrollcommand=scroll_x.set,yscrollcommand=scroll_y.set)
+text.pack()
+scroll_y.config(command=text.yview)
+scroll_x.config(command=text.xview)
+window.mainloop()
